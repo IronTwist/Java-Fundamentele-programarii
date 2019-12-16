@@ -5,6 +5,7 @@ public class testGit {
 		System.out.println("Hello Git!");
 		System.out.println("Schimbat pe myria");
 		System.out.println("modificat pe lenovo");
+		System.out.println("modificat le myria iar");
 	}
 
 }

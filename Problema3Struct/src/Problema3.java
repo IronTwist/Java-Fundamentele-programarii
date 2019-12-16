@@ -65,7 +65,6 @@ public class Problema3 {
 				index++;
 			}while(index <= nrAMere);  // 1...5
 			
-			
 			nrBPortocale = citiretastatura("Introdu numarul de portocale care cad: ");
 			index = 1;
 			

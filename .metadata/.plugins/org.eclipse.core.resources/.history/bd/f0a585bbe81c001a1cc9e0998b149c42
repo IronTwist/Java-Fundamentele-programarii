@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Problema1 {
+
+	public static void main(String[] args) {
+		int inaltime = 0;
+		int numarCopaci = 0;
+		int numarAni = 1;
+		int repetare = 1;
+		
+		Scanner scanez = new Scanner(System.in);
+		
+		System.out.print("Introdu numar de copaci: ");
+		numarCopaci = scanez.nextInt();
+		
+		System.out.print("Introdu inaltime copac: ");		//inaltime
+		inaltime = scanez.nextInt();
+		
+		System.out.print("Introdu numarul de ani: ");		//numar de ani
+		numarAni = scanez.nextInt();
+		
+			do {
+				
+				
+				
+			}while(repetare <= numarAni);
+		
+		System.out.println("Ai introdus: " + copac + numarAni);
+		
+		scanez.close();		
+	}
+	
+}

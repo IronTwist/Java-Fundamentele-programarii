@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		int suma;
+		int numarN;
+		
+		System.out.println("Hello World");
+		
+		Scanner inputKeyboard = new Scanner(System.in);
+		Functii numarObiect = new Functii();
+		
+		
+		do {
+		System.out.print("Introdu un numar pentru al afisa: ");
+		numarN  = inputKeyboard.nextInt();
+		numarObiect.setInput(numarN);
+		
+		suma = 5 + numarObiect.getInput();
+		
+		
+		
+		System.out.println(numarN + " + " + "5 = " + suma);
+		System.out.println("Suma din obiect generata cu (+10) este: " + numarObiect.suma());
+		}while(suma > 10);
+		System.out.println("Ai iesit din program!");
+		
+		inputKeyboard.close();
+		
+	}
+
+}

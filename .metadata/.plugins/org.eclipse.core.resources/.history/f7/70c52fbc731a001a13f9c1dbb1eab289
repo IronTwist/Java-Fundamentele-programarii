@@ -1,0 +1,9 @@
+
+public class Functii {
+	private int input;
+	
+		public Functii(int input) {
+		this.input = input;
+	}
+
+}

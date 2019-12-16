@@ -1,0 +1,17 @@
+
+public class Functii {
+	private int input;
+	
+		public Functii(int input) {
+		this.setInput(input);
+	}
+
+		public int getInput() {
+			return input;
+		}
+
+		public void setInput(int input) {
+			this.input = input;
+		}
+
+}

@@ -1,0 +1,9 @@
+
+public class Functii {
+	private int input;
+	
+	public static void suma(int input) {
+		this.input = input;
+	}
+
+}

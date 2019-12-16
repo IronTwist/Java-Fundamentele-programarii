@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Problema1 {
+
+	public static void main(String[] args) {
+		int inaltime = 0;
+		int copac = 0;
+		int an = 1;
+		
+		
+
+	}
+
+}

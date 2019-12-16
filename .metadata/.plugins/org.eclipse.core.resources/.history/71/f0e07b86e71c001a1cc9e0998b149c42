@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Problema1 {
+
+	public static void main(String[] args) {
+		int inaltime = 0;
+		int copac = 0;
+		int an = 1;
+		
+		Scanner scanez = new Scanner(System.in);
+		System.out.println("Introdu nr. copac: ");
+		copac = scanez.nextInt();
+		
+		System.out.println("Ai introdus: " + copac);
+		
+
+	}
+
+}

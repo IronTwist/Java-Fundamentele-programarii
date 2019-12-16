@@ -1,0 +1,104 @@
+import java.util.Scanner;
+
+public class Problema3 {
+
+	public static void main(String[] args) {
+		int s, t, a, b;
+		
+		int nrAMere;
+		int distanteMere;
+		int mereCazutePeCasa = 0;
+		
+		int nrBPortocale;
+		int distantePortocale;
+		int portocaleCazutePeCasa = 0;
+		
+		int index = 1;
+		
+		s = citiretastatura("Introdu marginea casei din stanga: ");
+		
+		do {
+			t = citiretastatura("Introdu marginea casei din dreapta: ");
+			if(t <= s) {
+				System.out.println("Atentie! Marginea din dreapta trebuie sa fie mai mare decat cea din stanga.");
+			}
+		}while(t <= s);
+		
+		do {
+			a = citiretastatura("Introdu pozitia marului: ");
+				if(a >= s) {
+					System.out.println("Atentie! marul nu poate fi in acelasi loc cu casa.");
+				}
+		}while(a >= s);
+		
+		do {
+			b = citiretastatura("Introdu pozitia portocalului: ");
+			if(b <= t) {
+				System.out.println("Atentie! portocalul nu poate fi in acelasi loc cu casa");
+			}
+		}while(b <= t);
+		
+		//..................................................................................................................
+		
+		nrAMere = citiretastatura("Introdu numarul de mere care cad: \n");   //5
+		
+			do {
+				System.out.print("\tIntrodu distanta la care cade marul " + index + ": ");
+				
+				distanteMere = citiretastatura("");
+					if((distanteMere + a) >= s){
+						System.out.println("Acest mar a cazut pe casa!!!");
+						mereCazutePeCasa++;
+					}
+				index++;
+			}while(index <= nrAMere);  // 1...5
+			
+			
+			nrBPortocale = citiretastatura("Introdu numarul de portocale care cad: \n");
+			index = 1;
+			
+			do {
+				System.out.println("\t Introdu distanta la care cade portocala " + index + ": ");
+				
+				distantePortocale = citiretastatura("");
+					if((distantePortocale + t) <= t) {
+						System.out.println("Aceasta portocala a cazut pe casa!!!");
+						portocaleCazutePeCasa++;
+					}
+				
+				index++;
+			}while(index <= nrBPortocale);
+			
+			System.out.println("\n\t\t Reprezentare casa si pomi \n\n");
+			int lungime = t+5;
+			int[] reprezentare = new int[lungime];
+			
+			System.out.println("[");
+			for(int i=0; i < lungime; i++) {
+				if(i == s) {
+					reprezentare[i] = s;
+				}
+				System.out.print(reprezentare[i] +", ");
+			}
+			System.out.print("]");
+			
+			System.out.println("\t\tNumarul de mere cazute pe casa este: " + mereCazutePeCasa);
+			System.out.println("\t\tNumarul de portocale cazute pe casa este: " + portocaleCazutePeCasa);
+
+	} //end main
+	
+	public static int citiretastatura(String str) {
+		System.out.print(str);
+		
+		try {
+			Scanner scan = new Scanner(System.in);
+			
+			return scan.nextInt();
+			
+		}catch(Exception exp) {
+			System.out.println("Atentie!! datele introduse nu sunt valide.");
+			return citiretastatura(str);
+		}
+	}
+
+}

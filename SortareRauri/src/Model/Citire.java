@@ -16,7 +16,7 @@ public class Citire {
 			t[i].setNume(nume); 
 			
 			int lung = Run.citIntreg("da lungime: ");
-					t[i].setLungime(lung);
+			t[i].setLungime(lung);
 		}
 		
 		

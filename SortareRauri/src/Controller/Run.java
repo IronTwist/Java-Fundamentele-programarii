@@ -3,7 +3,7 @@ import Model.*;
 import java.util.Scanner;
 
 import Model.Fluviu;
-//Controler
+//Controller
 public class Run {
 	
 	public static int citIntreg(String str) {					//returnare optiune meniu

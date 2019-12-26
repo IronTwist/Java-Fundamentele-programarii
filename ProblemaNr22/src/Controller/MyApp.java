@@ -58,11 +58,9 @@ public class MyApp {
 		
 		ImportCarbune listaImporturi[] = null;
 		
-		do {
-			
-			
+		do {	
 			switch(opt) {
-				case 1:																	//adaugare date de la tastatura
+				case 1:																//adaugare date de la tastatura
 						listaImporturi = adaugareDateimport(listaImporturi);
 						System.out.println("Am finalizat citirea datelor");
 						break;
@@ -93,6 +91,7 @@ public class MyApp {
 			}
 			
 			opt = Menu();
+			
 		}while(opt != 5);		//end while
 		
 		System.out.println("Program terminat");

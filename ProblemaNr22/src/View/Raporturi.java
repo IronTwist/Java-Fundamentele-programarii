@@ -16,7 +16,7 @@ public class Raporturi {
 			s[0] = Imp[i].getNumeTara();
 			long cant = Imp[i].getImportLunar();
 			s[1] = Long.toString(cant);
-			System.out.print("\t\t"+i);
+			System.out.print("\t\t"+(i+1));
 			System.out.printf("|%-10s|%-10s tep|\n", s);		//afisare formatata
 			i++;
 		}

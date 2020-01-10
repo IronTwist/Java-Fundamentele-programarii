@@ -8,7 +8,7 @@ import View.*;
 
 public class MyApp {
 	
-	public static String keyboardRead(String str) {
+	public static String keyboardRead(String str) {								//citire date tastatura
 		System.out.print(str);
 		
 		try {
@@ -23,26 +23,8 @@ public class MyApp {
 	}//end keyRead
 	
 	public static ImportCarbune[] adaugareDateimport(ImportCarbune imp[]) {
-		
-//		String n;
-//		n = keyboardRead("Cate tari? ");
-//		int nrTari = Integer.parseInt(n);
-//		
-//		imp = new ImportCarbune[nrTari];
-//		
-//		for(int i = 0; i < nrTari; i++) {
-//			
-//			imp[i] = new ImportCarbune();
-//			System.out.println("Introdu date tara nr " + (i+1) + " :");
-//			String nume = keyboardRead("Numele tarii: ");
-//			imp[i].setNumeTara(nume);
-//			
-//			String cantImport = keyboardRead("Cate tep(tone echivalent in petrol): ");
-//			imp[i].setImportLunar(Long.parseLong(cantImport));	
-//			
-//		}
-		
-		if(imp == null) {
+
+		if(imp == null) {														//adaug tari daca nu am importat lista anterior
 			
 			String n;
 			n = keyboardRead("Cate tari? ");
@@ -62,7 +44,7 @@ public class MyApp {
 				
 			}
 			
-		}else {
+		}else {																//daca am importat fisierul text atunci doar adaug datele in lista
 					
 			ImportCarbune listaUpdate[] = new ImportCarbune[imp.length+1]; 
 			
@@ -93,24 +75,24 @@ public class MyApp {
 			s = fisierIn.readLine(); //atasez la string s prima linie
 			n = Integer.parseInt(s);	//parsez din string la int si transfer in n pentru a sti cate linii avem
 			
-			lista = new ImportCarbune[n]; //aloca n referinte pentru fiecare student St[n] = [Student 0, Student 1, Student 2.nume/2.not]
+			lista = new ImportCarbune[n]; //aloca n referinte pentru fiecare tara
 			
-			System.out.println("n= " + lista.length); 	//afisez lungime st array sau cate elevi sunt
+			System.out.println("n= " + lista.length); 	
 			
 			int i = 0;
 			
 				while((s = fisierIn.readLine()) != null) {			
 					String bucati[] = s.split(",");					// impart Stringul s 
 					
-					String nume = bucati[0];							//impartim pe stringuri si int feliile de stringuri decupate
+					String nume = bucati[0];							
 					
 					long nota = Long.parseLong(bucati[1]);
 					
-					lista[i] = new ImportCarbune();						//pentru fiecare sudent adaug informatiile necesare
+					lista[i] = new ImportCarbune();						//pentru fiecare tara adaug informatiile necesare
 					lista[i].setNumeTara(nume);
 					lista[i].setImportLunar(nota);
 					
-					i++;										//incrementez pentru urmatorul elev
+					i++;										//incrementez pentru urmatorul
 				}//end while
 			System.out.println("Lungimea tabelului= "+lista.length);
 			fisierIn.close();
@@ -123,7 +105,7 @@ public class MyApp {
 	}//end citireDinFisier()
 	
 	
-	public static int Menu() {
+	public static int Menu() {													//functie afisare meniu
 		System.out.println("\n1. Incarcare date din fisier");
 		System.out.println("2. Citire date tastatura");
 		System.out.println("3. Afisare importuri");
@@ -142,7 +124,7 @@ public class MyApp {
 		do {
 			
 			switch(opt) {
-				case 1:
+				case 1:																	//importare din fisier
 						listaImporturi = citireDinFisier();
 						System.out.println("Datele din fisier s-au incarcat cu succes");
 						break;
@@ -156,7 +138,7 @@ public class MyApp {
 						}																//afisare importuri
 						Raporturi.showAll(listaImporturi);
 						break;
-				case 4:	if(listaImporturi == null) {
+				case 4:	if(listaImporturi == null) {									//sortare importuri alfabet
 							System.out.println("\t\tAtentie baza de date este nula!");
 							break;
 						}

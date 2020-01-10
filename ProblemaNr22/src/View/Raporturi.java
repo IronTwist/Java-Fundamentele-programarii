@@ -1,7 +1,5 @@
 package View;
 
-import java.text.DecimalFormat;
-
 import Model.*;
 
 public class Raporturi {
@@ -18,7 +16,8 @@ public class Raporturi {
 			s[0] = Imp[i].getNumeTara();
 			long cant = Imp[i].getImportLunar();
 			s[1] = Long.toString(cant);
-			System.out.printf("\t\t|%-10s|%-10s tep|\n", s);		//afisare formatata
+			System.out.print("\t\t"+(i+1));
+			System.out.printf("|%-10s|%-10s tep|\n", s);		//afisare formatata
 			i++;
 		}
 	}//end showAll
@@ -36,16 +35,12 @@ public class Raporturi {
 		i = 0;
 		while(i < Imp.length) {									//setez procentaj pentru fiecare tara
 			long cantImp = Imp[i].getImportLunar();
-			double proc =((double) cantImp / total) * 100;
-			//proc = Math.round(proc);
+			double proc =((double) cantImp / total) * 100;		
 			Imp[i].setProcentImport(proc);
 			i++;
 		}
 		
 		Sortari.sortareProcent(Imp);  						//Sortez in functie de procent
-		
-
-		
 		
 		CapTabel.capTabelProcentual();
 		i=0;
@@ -61,6 +56,7 @@ public class Raporturi {
 			
 			i++;
 		}///end afisare tabel cu procente
+		
 		System.out.println("\t\t\tTotal importuri: "+ total);
 		
 	}// end showProcentual

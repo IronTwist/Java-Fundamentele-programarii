@@ -1,6 +1,0 @@
-5
-Romania,45120
-Elvetia,24530
-Suedia,13254
-Croatia,456
-Anglia,75123
